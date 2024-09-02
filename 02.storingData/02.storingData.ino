@@ -1,5 +1,5 @@
 /*
-  Author: 
+  Author: Ben J 14-8-2024
   
   Learning Intention:
   The students will learn about the different data types used in the C++ language
@@ -10,7 +10,6 @@
     2.  I know how to access more information about the different datatypes in the documentation
     3.  I Understand how (1, HIGH and true) and (0, LOW, false) all represent the same concept and can be
         used interchangeably in an INO sketch
-    4.  I can convert an integer, float and boolean to a string and print it in to the serial monitor
     5.  I understand the difference between an int and an unsigned int or a long or an unsigned long
     6.  I understand the difference between a global variable and a function variable 
 
@@ -19,8 +18,23 @@
     https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
 */
 
-void setup() {
+int myInt = 3;
+int myIntValue = 5;
+String myString = ("Hello World");
+float myFloatingPoint = 3.14;
+bool myValue = false;
+static unsigned long  myunsignedLong = 3.141592653589793238462643;
+
+
+
+
+void setup()
+{
   
+  Serial.begin(9600);
+  Serial.println(myString + " :" + myIntValue);
+    myInt = 3 + 7;
+  Serial.println(myInt);
 }
 
 void loop() {
