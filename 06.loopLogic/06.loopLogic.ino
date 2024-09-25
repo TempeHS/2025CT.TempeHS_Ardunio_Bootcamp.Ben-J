@@ -5,7 +5,7 @@
   The students understand loop logic and apply it to a range of control structures.
   
   Success Criteria:
-    1.  I understand logic Logic is asking questions and based on the true and false answer repeating 
+    1.  I understand loop Logic is asking questions and based on the true and false answer repeating 
         or not repeating something
     2.  I can apply different comparison operators to get a desired outcome in a count and pre-test loop
         control structure 
@@ -35,11 +35,42 @@
     
 */
 
-void setup() {
-  
-}
+#define LEDpin 3
+#define BTNpin 4
 
-void loop() {
-      
-}
+void setup()
+  {
+    pinMode(BTNpin, INPUT);
+    pinMode(LEDpin, OUTPUT);
+    Serial.begin(9600);
+  }
 
+void loop()
+  {
+    do {
+      digitalWrite(LEDpin, HIGH);
+      Serial.println("Looping");
+    } 
+    while (digitalRead(BTNpin) < 1 ||  );
+
+    digitalWrite(LEDpin, LOW);
+    Serial.println("Loop is skipped");
+  }
+
+
+/*
+    while (digitalRead(BTNpin) > 0) {
+      digitalWrite(LEDpin, HIGH);
+      Serial.println("Looping");
+    }
+    digitalWrite(LEDpin, LOW);
+    Serial.println("Loop is skipped");
+
+
+    for (int i = -255; i < 255; i++)
+    {
+      unsigned val = i;
+      analogWrite(LEDpin,val);
+      delay (50);
+    }
+  */

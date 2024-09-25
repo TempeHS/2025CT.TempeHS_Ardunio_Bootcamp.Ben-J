@@ -23,13 +23,32 @@
     https://github.com/TempeHS/TempeHS_Ardunio_Bootcamp/blob/main/11.ultrasonicSensor/Bootcamp-ultrasonicSensor.png
 */
 
+// Design a mechatronic system to automate a boom gate
+// As car approaches (10cm) boom gate should open
+// Once car passes, boomgate closes after 30 seconds
+
+
+
 #include "Ultrasonic.h"
 
-void setup()
-{
-  
+#include <Servo.h>
+int USPin = 5;
+
+Servo myservo;
+Ultrasonic braj_the_sensor(USPin);
+
+unsigned static int servoPin = 7;
+unsigned static int potpin = A2;
+
+void setup() {
+  myservo.attach(servoPin);
+  Serial.begin(9600);
 }
-void loop()
-{
+
+void loop() {
+  Serial.println(braj_the_sensor.distanceRead());
   
+  int val = analogRead(potpin);
+  val = map(val, 0, 1023, 0 , 180);
+  myservo.write(val);
 }
